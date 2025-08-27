@@ -13,13 +13,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/favicon.png">
   <style>
-    :root { --bg: #0a0b0e; --card: #12141a; --muted: #9aa3b2; --text: #eef2f7; --brand: #0b5cff; --ring: rgba(11,92,255,.35); }
+    :root { --bg:#0b0d13; --card:#131826; --text:#f2f5f9; --muted:#a7b3c4; --blue:#0071ce; --gold:#ffc220; --ring: rgba(0,113,206,.35);} 
     * { box-sizing: border-box; }
     html,body { margin:0; padding:0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji"; background: var(--bg); color: var(--text); }
     a { color: var(--text); text-decoration: none; }
     .wrap { max-width: 980px; margin: 0 auto; padding: 28px; }
-    .hero { display: grid; gap: 16px; padding: 32px; border-radius: 20px; background: linear-gradient(180deg, rgba(11,92,255,.08), rgba(255,255,255,.02)); border: 1px solid rgba(255,255,255,.06); box-shadow: 0 10px 40px rgba(0,0,0,.35); }
+    .hero{display:grid;gap:10px;padding:28px;border-radius:18px;background:linear-gradient(180deg,rgba(0,113,206,.10),rgba(255,194,32,.06));border:1px solid rgba(255,255,255,.08);box-shadow:0 10px 30px rgba(0,0,0,.35);grid-template-columns:1fr;align-items:center}
+    @media(min-width:860px){.hero{grid-template-columns:1.2fr .8fr}}
     .name { font-size: clamp(28px, 4vw, 44px); font-weight: 800; letter-spacing: .2px; }
     .role { font-size: clamp(16px, 2.4vw, 20px); color: var(--muted); }
     .cta-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 6px; }
@@ -36,7 +38,11 @@
     .section { margin-top: 24px; }
     .kvs { display:flex; flex-wrap:wrap; gap:8px; }
     .kv { background: rgba(11,92,255,.08); border:1px solid rgba(11,92,255,.25); padding: 10px 12px; border-radius: 12px; font-weight:600; }
-    footer { opacity:.8; color: var(--muted); margin-top: 32px; text-align:center; font-size: 13px; }
+    footer{margin-top:28px;color:var(--muted);text-align:center;font-size:13px}
+    /* avatar */
+    .avatar{justify-self:center}
+    .avatar img{width:160px;height:160px;border-radius:50%;object-fit:cover;border:3px solid rgba(255,255,255,.15);box-shadow:0 10px 24px rgba(0,0,0,.35)}
+    @media(min-width:860px){.avatar{justify-self:end}}
     .muted { color: var(--muted); }
     .list { padding-left: 18px; }
     .list li { margin: 6px 0; }
@@ -47,7 +53,7 @@
     <header class="hero">
       <div class="name">Bhupinder Singh</div>
       <div class="role">Front End Team Lead, Walmart — Candidate for Frontend Coach (Non‑Complex)</div>
-      <div class="muted">Warner Robins, GA · 929‑412‑9659 · <a href="mailto:bs690155@gmail.com">bs690155@gmail.com</a></div>
+      <div class="muted">Forsyth, GA · 929‑412‑9659 · <a href="mailto:bs690155@gmail.com">bs690155@gmail.com</a></div>
       <div class="cta-row">
         <a class="btn brand" href="resume/Bhupinder_Singh_FrontendCoach_Resume.pdf" download>
           <span>⬇️ Download Resume (PDF)</span>
@@ -56,6 +62,9 @@
         <a class="btn" href="#highlights">Highlights</a>
         <a class="btn" href="#contact">Contact</a>
       </div>
+      <figure class="avatar">
+      <img src="assets/headshot.jpg" alt="Bhupinder Singh portrait" loading="lazy" />
+    </figure>
     </header>
 
     <section id="highlights" class="section grid">
@@ -71,7 +80,7 @@
       <article class="card">
         <h3>Tools I Use</h3>
         <div class="kvs">
-          <span class="kv">One.Walmart</span>
+          <span class="kv">OneWalmart</span>
           <span class="kv">Workday (HRIS)</span>
           <span class="kv">Front‑End POS & SCO</span>
           <span class="kv">Microsoft Excel / Word / Outlook</span>
@@ -139,6 +148,7 @@
     </footer>
   </div>
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script>/* smooth scroll */document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'})}))</script>
 </body>
 </html>
-
